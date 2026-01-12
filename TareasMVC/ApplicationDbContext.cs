@@ -7,6 +7,8 @@ namespace TareasMVC
 {
     public class ApplicationDbContext : IdentityDbContext
     {
+        //internal object ArchivosAdjuntos;
+
         public ApplicationDbContext(DbContextOptions options) : base(options)
         {
         }
@@ -20,6 +22,6 @@ namespace TareasMVC
 
         public DbSet<Tarea> Tareas { get; set; }
         public DbSet<Paso> Pasos { get; set; }
-        public DbSet<ArchivoAdjunto> archivoAdjuntos { get; set; }
+        public DbSet<ArchivoAdjunto> ArchivosAdjuntos { get; set; }
     }
 }

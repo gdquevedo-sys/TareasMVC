@@ -32,7 +32,7 @@ builder.Services.AddControllersWithViews(opciones =>
 });
 
 builder.Services.AddDbContext<ApplicationDbContext>(opciones => 
-opciones.UseSqlServer("name= DefaultConnection"));
+opciones.UseSqlServer("name=DefaultConnection"));
 
 builder.Services.AddAuthentication().AddMicrosoftAccount(opciones =>
 {
@@ -60,6 +60,7 @@ builder.Services.AddLocalization(opciones =>
 
 builder.Services.AddTransient<IServicioUsuarios, ServicioUsuarios>();
 builder.Services.AddAutoMapper(typeof(Program));
+builder.Services.AddTransient<IAlmacenadorArchivos, AlmacenadorArchivosAzure>();
 
 var app = builder.Build();
 

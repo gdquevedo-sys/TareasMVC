@@ -172,7 +172,7 @@ function obtenerIdsPasos() {
     return ids;
 }
 
-async function enviarIdsPasosAlBacken(ids) {
+async function enviarIdsPasosAlBackend(ids) {
     var data = JSON.stringify(ids);
     await fetch(`${urlPasos}/ordenar/${tareaEditarVM.id}`, {
         method: 'POST',

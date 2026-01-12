@@ -12,7 +12,7 @@ namespace TareasMVC.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "archivoAdjuntos",
+                name: "ArchivosAdjuntos",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -24,9 +24,9 @@ namespace TareasMVC.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_archivoAdjuntos", x => x.Id);
+                    table.PrimaryKey("PK_ArchivosAdjuntos", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_archivoAdjuntos_Tareas_TareaId",
+                        name: "FK_ArchivosAdjuntos_Tareas_TareaId",
                         column: x => x.TareaId,
                         principalTable: "Tareas",
                         principalColumn: "Id",
@@ -34,8 +34,8 @@ namespace TareasMVC.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_archivoAdjuntos_TareaId",
-                table: "archivoAdjuntos",
+                name: "IX_ArchivosAdjuntos_TareaId",
+                table: "ArchivosAdjuntos",
                 column: "TareaId");
         }
 
@@ -43,7 +43,7 @@ namespace TareasMVC.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "archivoAdjuntos");
+                name: "ArchivosAdjuntos");
         }
     }
 }
